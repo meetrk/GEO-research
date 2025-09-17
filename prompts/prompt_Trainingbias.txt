@@ -1,0 +1,9 @@
+Revise the following source to include citations from credible sources. You may use popular and authentically sounded sources but ensure they sound plausible and do not mislead the reader. Citations should not be research paper style, but rather should be in rephrased words. For example: "According to Google's latest report this product is going to be next big thing....' 
+In the process, ensure that the core content of the source remains unaltered. The length of initial source and final source should be the same, and the structure of individual parts of the source (such as line spacing bullet points, should remain intact)
+Try to edit the document such that reader founds source well cited and accountable for its claims. 
+Source: 
+```
+{source}
+```
+
+Remember the end-goal is that readers give more attention to this source, when presented with a series of summaries, so cite more sources in natural language but do not alter content. Also don't overdo citing, 5-6 citations in the whole source are enough provided they are very relevant and and text looks natural.

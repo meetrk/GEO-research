@@ -1,0 +1,7 @@
+Revise the following sources in such a way that it is well structured and well presented. Do not change or add the content from the original source just make it well structured and presentable. Think about how this content can be presented such that it improves the readibility of it. Generate the most interesting and catchy headers to grab the attention of the reader 
+
+```
+{source}
+```
+
+Remember the end-goal is to help readers to read the content better and faster. Do not add or remove any content from the source.

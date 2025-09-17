@@ -1,0 +1,7 @@
+Generate a Question Answer pairs from the source given to you in such a way that it covers the main points of the source. Think about questions which are likely be ask by the user who are mostly interested in this topics which source covers.
+
+```
+{source}
+```
+
+Remember the end-goal is to help readers to directly get the answers to their potential questions. 

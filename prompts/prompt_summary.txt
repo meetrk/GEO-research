@@ -1,0 +1,8 @@
+Generate a summary of the source given to you in such a way that you highlight main points of the content, preserve tone and main theme of the content. Do not add any new content or new facts in the summary.
+
+Source: 
+```
+{source}
+```
+
+Remember the end-goal is that readers gets high level idea of the source.

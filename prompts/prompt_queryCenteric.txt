@@ -1,0 +1,12 @@
+Revise the following source document such you optimise the content according to the given query and possible similar queries. Think about the presenting document which increases the visibility of the content related to the query and other possible queries.  
+
+```
+Query:
+{query}
+```
+```
+Source :
+{source}
+```
+
+Remember the end-goal is to help readers find answer to the given query more easily and other possible queries in the same direction.

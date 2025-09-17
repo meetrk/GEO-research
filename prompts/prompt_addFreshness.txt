@@ -1,0 +1,8 @@
+Revise the following source document such you add freshness to the content. Use time awared vocabulary like "recently", "in this year", "Feabruary 2025" and several other words and date which makes content updated and fresh. Do not change the content itself just add this filler words and sentences to make it look fresh and up-to-date. Please keep in mind that it should sound plausible and do not mislead the reader.
+Do not remove any facts and Do not add any new facts themselves.
+```
+Source :
+{source}
+```
+
+Remember the end-goal is to help readers perceived the value of the content. Just return the edited source.

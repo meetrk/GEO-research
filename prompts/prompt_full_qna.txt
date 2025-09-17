@@ -1,0 +1,9 @@
+Revise the following source document such that you change the format of the source document. Transform full documents into question-answer pairs. Make questions around the documents and write answers according to that. Cover full document in this format of Q&A pairs.You can cluster questions according to their subtopics.
+do not remove or add anything to the content. Just change the format of how document is presented. Input will be doucment and output will be just Question Answer Pair.
+
+```
+Source :
+{source}
+```
+
+Remember the end-goal is to help readers to understand the content in another format. Do not add any new facts or delete. All meaning and purpose of the content should be preserved. 

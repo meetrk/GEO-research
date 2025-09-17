@@ -1,0 +1,8 @@
+Revise the following source document such that you change the style of the document writing and make it as if author is giving a speech. Change the tone to human tone and add all the element a speech has. add filler words "um," "uh," "like," and "you know".Phrases like "I mean," "you see," and "at the end of the day". 
+You just have to change the tonality and way of presentating this source document. Meaning, Facts, Overall content and intent of the document should be well preserved. Do not add, remove or change any factual information of the content.
+```
+Source :
+{source}
+```
+
+Remember the end-goal is to help readers to understand the content better as if it was a speech. Just give me edited document directly without any commentary from your side.

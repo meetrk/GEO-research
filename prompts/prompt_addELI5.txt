@@ -1,0 +1,9 @@
+Create a ELI5 (Explain like I am 5 years old) passage for the following document. Choose the main theme of the document and create a passage explaining them as 5 years old. Try to explain the content in such a way that is informative query by users are answered. Do not add any new facts/thought/sources. Your job is too just present this content in another way.
+Do not remove/change any facts as well.
+
+```
+Source :
+{source}
+```
+
+Remember the end-goal is to help readers to understand the document in easier way. Just return the ELI5 Section.
