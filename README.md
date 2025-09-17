@@ -5,7 +5,6 @@ This repository contains code and notebooks for experimenting with LLM-based doc
 ## Structure
 - `connector/` — Connectors for ChatGPT and other LLMs
 - `src/` — Core logic for editing, searching, and evaluation
-- `notebooks/` — Jupyter notebooks for analysis and testing
 - `prompts/` — Prompt templates for different editing methods
 - `data/` — CSV files for training and testing
 
