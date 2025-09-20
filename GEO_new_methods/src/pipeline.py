@@ -1,10 +1,10 @@
 import pandas as pd
-from src.chooser import choose_document
-from src.database import parse_dataset,create_batches
-from src.editor import edit_document
-from src.search import perform_search
-from src.utils import save_object
-from src.evaluator import evaluate, evaluate_diff
+from GEO_new_methods.src.chooser import choose_document
+from GEO_new_methods.src.database import parse_dataset,create_batches
+from GEO_new_methods.src.editor import edit_document
+from GEO_new_methods.src.search import perform_search
+from GEO_new_methods.src.utils import save_object
+from GEO_new_methods.src.evaluator import evaluate, evaluate_diff
 import tqdm
 
 

@@ -1,6 +1,6 @@
 import pandas as pd
-from src.pipeline import run_method
-from src.method_eval import summarize_differences, print_diff_summary, batch_evaluate_diff
+from GEO_new_methods.src.pipeline import run_method
+from GEO_new_methods.src.method_eval import summarize_differences, print_diff_summary, batch_evaluate_diff
 from connector.chatgpt import ChatGPTConnector
 
 
@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     connector = ChatGPTConnector("chatgpt-4o-latest")
     method = 'addELI5' 
-    df = pd.read_csv("./data/processed_test.csv")
+    df = pd.read_csv("GEO_new_methods/data/processed_test.csv")
 
 
     # df = run_pipeline(
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     methods = ['structure','queryCenteric','summary','Trainingbias','faq','addFreshness','full_qna','speech','author','addELI5']
     for method in methods:
-        df = pd.read_pickle(f'search_results/method_{method}.pkl')
+        df = pd.read_pickle(f'GEO_new_methods/search_results/method_{method}.pkl')
         results_list = batch_evaluate_diff(df, concat=False)
         for b, res in enumerate(results_list):
             summary = summarize_differences(res, diff_col="evaluation_diff", index_col="choosen_doc_idx") # type: ignore

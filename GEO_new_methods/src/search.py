@@ -3,6 +3,7 @@ from connector.connector import Connector
 
 
 
+
 def perform_search( query: str, sources: List[str], connector: Connector, system_prompt_file = './prompts/search_normal.txt', temp=0, top_p=1) -> str | None:
     """
     Performs a search by reading system prompt from a file and calling the provided connector.
