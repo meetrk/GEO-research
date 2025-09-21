@@ -8,6 +8,6 @@ class Connector(ABC):
         self.model_name = model_name
 
     @abstractmethod
-    def call(self, system_prompt, user_prompt, temp, top_p) -> None | str:
+    def call(self, system_prompt, user_prompt, temp, top_p) -> None | object:
         """Abstract method for making API calls"""
         pass

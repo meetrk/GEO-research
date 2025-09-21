@@ -49,7 +49,7 @@ def perform_search( query: str, sources: List[str], connector: Connector, system
     # Call the provided connector
     try:
         response = connector.call(system_prompt, prompt, temp, top_p)
-        return response
+        return response.choices[0].message.content
     except Exception as e:
         return f"Error during connector call: {str(e)}"
     

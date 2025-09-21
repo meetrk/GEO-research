@@ -15,14 +15,34 @@ class ChatGPTConnector(Connector):
         openai_key = config['API_KEYS']['openai_api_key']
         self.client = OpenAI(api_key=openai_key)
 
-    def call(self, system_prompt, user_prompt, temp, top_p):
-        response = self.client.chat.completions.create(
+    def call(self, system_prompt, user_prompt, temp, top_p, search = False):
+        if search:
+            response = self.client.chat.completions.create(
             model=self.model_name,
             messages= [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
                 ],
-            temperature=temp,
-            top_p=top_p
-        )
-        return response.choices[0].message.content
+            web_search_options={
+                "user_location": {
+                "type": "approximate",
+                "approximate": {
+                    "country": "DE",
+                    "city": "Heilbronn",
+                    "region": "Baden-Württemberg",
+                }
+                },
+            },
+            )
+            return response
+        else:
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages= [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+                    ],
+                temperature=temp,
+                top_p=top_p
+            )
+            return response
