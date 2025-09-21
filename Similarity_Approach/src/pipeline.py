@@ -4,6 +4,8 @@ from Similarity_Approach.src.reader import read_webpages
 from Similarity_Approach.src.search_normal import perform_search
 from Similarity_Approach.src.embedding import get_jina_embeddings
 from Similarity_Approach.src.similarity import get_cosine_similarities
+from search.google import get_ranked_urls
+from Similarity_Approach.src.overlap import find_overlapping_urls
 
 def save_json(filepath, data):
     with open(filepath, 'w') as f:
@@ -15,15 +17,15 @@ def load_json(filepath):
             return json.load(f)
     return None
 
-def run_pipeline(query, connector, jina_api_key: str):
+def run_pipeline(query, connector, jina_api_key: str, search_api_key: str):
     # Step 1: Search
-    search_file = "/Users/meet/Documents/Documents/thesis/new code/Similarity_Approach/checkpoints/search_response.json"
+    search_file = "/Users/meet/Documents/Documents/thesis/new code/Similarity_Approach/checkpoints/chatgpt_search.json"
     search_data = load_json(search_file)
     if not search_data:
-        response, urls = perform_search(query, connector, search=True)
-        save_json(search_file, {'response': response, 'urls': urls})
+        response, urls, titles = perform_search(query, connector, search=True)
+        save_json(search_file, {'response': response, 'urls': urls, 'titles': titles})
     else:
-        response, urls = search_data['response'], search_data['urls']
+        response, urls= search_data['response'], search_data['urls']
 
     # Step 2: Read webpages
     webpages_file = "/Users/meet/Documents/Documents/thesis/new code/Similarity_Approach/checkpoints/webpages.json"
@@ -56,5 +58,14 @@ def run_pipeline(query, connector, jina_api_key: str):
     if not similarities:
         similarities = get_cosine_similarities(query_embedding, document_embeddings)
         save_json(similarities_file, similarities)
+
+    # Step 5: Search
+    search_file = "/Users/meet/Documents/Documents/thesis/new code/Similarity_Approach/checkpoints/google_search.json"
+    search_urls = load_json(search_file)
+    if not search_urls:
+        search_urls = get_ranked_urls(query, search_api_key)
+        save_json(search_file, search_urls)
+
+    find_overlapping_urls(urls,search_urls)
 
     return similarities

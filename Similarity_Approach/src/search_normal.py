@@ -13,7 +13,8 @@ def perform_search( query: str, connector: Connector, temp=0, top_p=1, search=Fa
 
         content = response.choices[0].message.content if response else None
         urls = [annotation.url_citation.url for annotation in response.choices[0].message.annotations] if response else []
-        return content, urls
+        titles = [annotation.title for annotation in response.choices[0].message.annotations] if response else []
+        return content, urls, titles
     except Exception as e:
         return f"Error during connector call: {str(e)}"
     
