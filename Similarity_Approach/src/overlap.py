@@ -17,9 +17,6 @@ def find_overlapping_urls(chatgpt_urls, search_urls):
         if domain in overlapping_domains:
             matches.append(url)
 
-    print(f"ChatGPT URLs, {chatgpt_domains}")
-    print(f"Search URLs, {search_domains}")
-    print("Overlapping URLs:", matches)
-    print("Number of overlapping URLs:", len(matches))
-    return matches
+
+    return matches, search_urls
     

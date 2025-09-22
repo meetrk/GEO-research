@@ -10,5 +10,4 @@ def get_cosine_similarities(query_embedding, document_embeddings):
     for doc_embedding in document_embeddings:
         sim = cosine_similarity(query_embedding, doc_embedding)
         similarities.append(sim)
-    print(similarities)
     return similarities

@@ -12,6 +12,7 @@ def read_webpages(urls: list[str], jina_api_key: str) -> list[str]:
     """
     contents = []
     for url in urls:
+        print(f"Reading Url:{url}")
         contents.append(retrieve_markdown(url, jina_api_key))
     return contents
 
@@ -20,7 +21,8 @@ def read_webpages(urls: list[str], jina_api_key: str) -> list[str]:
 def retrieve_markdown(url: str, jina_api_key: str):
     modified_url = 'https://r.jina.ai/{url}'
     headers = {
-        'Authorization': f'Bearer {jina_api_key}'
+        'Authorization': f'Bearer {jina_api_key}',
+        "X-Retain-Images": "none",
     }
 
     response = requests.get(modified_url.format(url=url), headers=headers)

@@ -1,6 +1,6 @@
 import requests
 
-def get_jina_embeddings(texts, jina_api_key: str) -> list:
+def get_jina_embeddings(docs: list[str], jina_api_key: str) -> list:
     """
     Get embeddings from Jina AI API for a list of text inputs.
 
@@ -10,6 +10,24 @@ def get_jina_embeddings(texts, jina_api_key: str) -> list:
     Returns:
         list: List of embedding objects (dicts) as returned by the API, each having 'object', 'index', and 'embedding' keys.
     """
+    print("total documents:", len(docs))
+    list_emb = []
+    for doc in docs:
+        print(type(doc))
+        list_emb.append(get_embedding(doc, jina_api_key))
+    return list_emb
+
+
+def get_embedding(text: str, jina_api_key: str) -> dict:
+    """
+    Get embedding from Jina AI API for a single text input.
+
+    Args:
+        text (str): Text string to get embedding for.
+
+    Returns:
+        dict: Embedding object (dict) as returned by the API, having 'object', 'index', and 'embedding' keys.
+    """
     url = 'https://api.jina.ai/v1/embeddings'
     headers = {
         'Content-Type': 'application/json',
@@ -17,12 +35,12 @@ def get_jina_embeddings(texts, jina_api_key: str) -> list:
     }
     data = {
         "model": "jina-embeddings-v3",
-        "task": "text-matching",
-        "input": texts
+        "task": "retrieval.query",
+        "input": text[:50]
     }
+    print(len(text))
     response = requests.post(url, headers=headers, json=data)
     response.raise_for_status()
     result = response.json()
 
     return result.get("data", [])
-
