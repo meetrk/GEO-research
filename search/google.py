@@ -19,6 +19,7 @@ def get_ranked_urls(query, api_key):
         "google_domain": "google.de",
         "gl": "de",
         "hl": "en",
+        "num": "5",
         "api_key": api_key
     }
 
